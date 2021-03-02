@@ -41,7 +41,7 @@ public class OpbTest {
 
         String opbUri = "https://opbningxia.bsngate.com:18602";
         String projectId = "7b3c53beda5c48c6b07d98804e156389";
-        String projectKey = "xxxTODO";
+        String projectKey = "7a3b5660c0ae47e2be4f309050c1d304";
         String chainId = "wenchangchain";
         OpbOption opbOption = new OpbOption(opbUri, projectId, projectKey);
         client = new IritaClient(chainId, opbOption, option);
