@@ -30,7 +30,7 @@ public class OpbTest {
     @BeforeEach
     public void init() throws Exception {
         FileInputStream input = new FileInputStream("src/test/resources/ca.JKS");
-        Key km = KeyManager.recoverFromCAKeystore(input, "123456");
+        Key km = KeyManager.recoverFromCAKeystore(input, "xxx");
 
         int gas = 10;
         int maxTxsBytes = 1073741824;
@@ -39,22 +39,22 @@ public class OpbTest {
         IritaClientOption.Fee fee = new IritaClientOption.Fee("13000000", "uirita");
         IritaClientOption option = new IritaClientOption(gas, fee, maxTxsBytes, mode, gasAdjustment, km);
 
-        String opbUri = "https://opbningxia.bsngate.com:18602";
-        String projectId = "7b3c53beda5c48c6b07d98804e156389";
-        String projectKey = "7a3b5660c0ae47e2be4f309050c1d304";
-        String chainId = "wenchangchain";
+        String opbUri = "xxx";
+        String projectId = "xxx";
+        String projectKey = "xxx";
+        String chainId = "xxx";
         OpbOption opbOption = new OpbOption(opbUri, projectId, projectKey);
         client = new IritaClient(chainId, opbOption, option);
         wasmClient = client.getWasmClient();
         comGovClient = client.getCommunityGovClient();
         baseTx = comGovClient.getComGovBaseTx();
 
-        ContractAddress.DEFAULT = "your ContractAddress";
+        ContractAddress.DEFAULT = "xxx";
     }
 
     @Test
     public void queryAccountNumber() {
-        Account account = client.queryAccount("iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2");
+        Account account = client.queryAccount("xxx");
         System.out.println(account.getAccountNumber());
         assertTrue(account.getAccountNumber() > 0);
     }
@@ -62,7 +62,7 @@ public class OpbTest {
     @Test
     public void addDepartment() {
         // publicKey == address in this version
-        final String publicKey = "iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3";
+        final String publicKey = "xxx";
         final String department = "测试部门";
 
         try {
@@ -77,13 +77,13 @@ public class OpbTest {
 
         String v1 = map.get(department);
         assertEquals("{}", v1);
-        String v2 = map.get("iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3");
+        String v2 = map.get("xxx");
         assertEquals("{\"department_name\":\"测试部门\",\"role\":0,\"public_key\":\"iaa1ytemz2xqq2s73ut3ys8mcd6zca2564a5lfhtm3\"}", v2);
     }
 
     @Test
     public void addMember() {
-        String newAddr = "iaa1wfs050mv8taydn4cttsrhr5dq3tpdaemcm5sk2";
+        String newAddr = "xxx";
 
         try {
             comGovClient.addMember(newAddr, Role.HASH_ADMIN, baseTx);
