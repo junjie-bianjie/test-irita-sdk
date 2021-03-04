@@ -52,7 +52,7 @@ public interface Key {
         int maxTxsBytes=1073741824;
         String mode="";
         double gasAdjustment=1.0;
-        IritaClientOption.Fee fee=new IritaClientOption.Fee("13000000","uirita");
+        IritaClientOption.Fee fee=new IritaClientOption.Fee("180000","uirita");
         IritaClientOption option=new IritaClientOption(gas,fee,maxTxsBytes,mode,gasAdjustment,km);
 
         String opbUri="xxx";
